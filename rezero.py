@@ -16,7 +16,10 @@ for nom in arr:
     #print(pos_n)
     if (pos_n < 0):
         continue    
-    pos2 = nom[pos_n:].find('-')
+    pos2 = pos_n
+    resto = nom[pos_n:]
+    match = re.search(r'\D', resto) #localiza un no digito
+    pos2 = match.start()
     if (pos2 > 0 and pos2 + pos_n < pos):
         pos = pos2 + pos_n
     if (pos > tam_max):
