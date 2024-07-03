@@ -12,6 +12,8 @@ for nom in arr:
     if (pos < 0):
         continue
     match = re.search(r'\d', nom)
+    if not match:
+        continue
     pos_n = match.start()
     #print(pos_n)
     if (pos_n < 0):
